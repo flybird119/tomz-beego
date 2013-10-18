@@ -4,26 +4,40 @@
 　 <title>My Page</title> 
 　 <meta name="viewport" content="width=device-width, initial-scale=1">
 　 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+   <link rel="stylesheet" type="text/css" href="static/css/mobile_layout.css">
 　 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 　 <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
 </head> 
 <body>
 
-<div data-role="page">
+<div class="page" data-role="page" data-fullscreen="false" data-title="Page Foo">
 
-	<div data-role="header">
-		<h1>My Title</h1>
+	<div class="header" data-role="header" data-position="fixed">
+		<a data-rel="back" data-icon="back">back</a>
+		<h1>{{.Website}}</h1>
 	</div><!-- end header -->
 
-	<div data-role="content">
-		<p>Hello world</p> 
+	<div class="content" data-role="content">
 		<ul data-role="listview" data-inset="true" data-filter="true">
-			<li><a href="" herf="#1">Links1</a></li>
-			<li><a href="" herf="#2">Links2</a></li>
-			<li><a href="" herf="#3">Links3</a></li>
-			<li><a href="" herf="#4">Links4</a></li>
-			<li><a href="" herf="#5">Links5</a></li>
+			<li><a href="" herf="/test1">跳转页面1</a></li>
+			<li><a href="" herf="#2">跳转页面2</a></li>
+			<li><a href="" herf="#3">跳转页面3</a></li>
+			<li><a href="" herf="#4">跳转页面4</a></li>
+			<li><a href="" herf="#5">跳转页面5</a></li>
+			<li><a href="" herf="#5">跳转页面6</a></li>
+			<li><a href="" herf="#5">跳转页面7</a></li>
+			<li><a href="" herf="#5">跳转页面8</a></li>
+			<li><a href="" herf="#5">跳转页面9</a></li>
+			<li><a href="" herf="#5">跳转页面10</a></li>
+			<li><a href="" herf="#5">跳转页面11</a></li>
+			<li><a href="" herf="#5">跳转页面12</a></li>
+			<li><a href="" herf="#5">跳转页面13</a></li>
+			<li><a href="" herf="#5">跳转页面14</a></li>
+			<li><a href="" herf="#5">跳转页面15</a></li>
+			<li><a href="" herf="#5">跳转页面16</a></li>
+			<li><a href="" herf="#5">跳转页面17</a></li>
 		</ul>
+		
 		<div>
 			<table>
 				<tr>
@@ -40,10 +54,10 @@
 		</div>
 	</div><!-- end content -->
 	
-	<div id="footer">
-		<div>
-			<p><strong>Copyright © 2013 Tomz </strong><a rel="nofollow" href="?lang=zh-CN&q="> 简体中文</a></p>
-		</div>
+	<div class="footer" data-role="footer" data-position="fixed">
+		<a rel="nofollow" data-role="button" data-transition="pop" href="/add">添加</a>
+		<a rel="nofollow" data-role="button" data-transition="pop" href="/edit">编辑</a>
+		<a rel="nofollow" data-role="button" data-transition="pop" href="/crmJqueryMobileTest.scala.html">取消</a>
 	</div>
 
 </div><!-- /page -->

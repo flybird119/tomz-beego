@@ -4,13 +4,12 @@ import (
 	"github.com/astaxie/beego"
 )
 
-type MainController struct {
+type EditController struct {
 	beego.Controller
 }
 
-func (this *MainController) Get() {
-	this.Data["Title"] = "TomZhou"
+func (this *EditController) Get() {
 	this.Data["Website"] = "tomz.me"
 	this.Data["Email"] = "zhouytao@yeah.net"
-	this.TplNames = "index.html"
+	this.TplNames = "edit.html"
 }
