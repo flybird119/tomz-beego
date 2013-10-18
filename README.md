@@ -4,11 +4,12 @@ tomz
 golang app
 
 
-在环境变量中设置根目录 $GOPATH，在$GOPATH 下新建 src 目录，用于存放web app, 整个项目结构如下：
+在环境变量中设置根目录 $GOPATH,在 $GOPATH 下新建 src 目录，用于存放web app,
+整个项目结构如下：
 
 $GOPATH                         $GOPATH 根目录
   src                           $GOPATH/src 目录
-    github.com/astaxie/beego    依赖的第三方工具 ->> Beego 源码目录
+    github.com/astaxie/beego    依赖的第三方工具->>Beego源码目录
       ...
     tomz                App 根目录
         main.go         Main 包文件
