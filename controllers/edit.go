@@ -9,7 +9,6 @@ type EditController struct {
 }
 
 func (this *EditController) Get() {
-	this.Data["Website"] = "tomz.me"
-	this.Data["Email"] = "zhouytao@yeah.net"
+	// this.Data["user"] = NewDefaultUser()
 	this.TplNames = "edit.html"
 }
