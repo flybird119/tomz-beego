@@ -7,7 +7,7 @@ import (
 
 	"github.com/Unknwon/com"
 	"github.com/astaxie/beego/orm"
-	"github.com/mattn/"
+	_ "github.com/mattn/go-sqllite3"
 )
 
 const (
@@ -30,20 +30,27 @@ type User struct {
 }
 
 type Article struct {
-	Id int64
-	Type                  VARCHAR2(8),
-  TITLE                 VARCHAR2(200) not null,
-  CONTENT               VARCHAR2(4000),
-  AUTHOR                NUMBER(38),
-  COMMENT_IND           CHAR(1) default 'Y',
-  REPRINT_IND           CHAR(1) default 'Y',
-  DEFUNCT_IND           CHAR(1) default 'N' not null,
-  CREATED_BY            NUMBER(38),
-  CREATED_DATETIME      DATE default SYSDATE not null,
-  LAST_UPDATED_BY       NUMBER(38),
-  LAST_UPDATED_DATETIME DATE default SYSDATE not null
+	Id          int64
+	Type        string
+	Title       string
+	Content     string `orm:"size(5000)"`
+	Author      int64
+	CommentInd  string
+	ReprintInd  string
+	DefunctInd  string
+	CreatedBy   int64
+	CreatedTime time.Time `orm:"index"`
+	UpdatedBy   int64
+	UpdatedTime time.Time `orm:"index"`
 }
 
 func RegisterDB() {
+	if !com.IsExist(DB_NAME) {
+		os.MkdirAll(path.Dir(DB_NAME), os.ModePerm)
+		os.Create(DB_NAME)
+	}
 
+	orm.RegisterModel(new(User), new(Article))
+	orm.RegisterDriver(SQLITE3_DRIVER, orm.DR_Sqlite)
+	orm.RegisterDataBase("default", SQLITE3_DRIVER, DB_NAME, 10)
 }
