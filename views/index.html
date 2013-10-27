@@ -38,20 +38,15 @@
 		
 		<div>
 			<table>
+				{{rang .user}}
 				<tr>
-					<td>{{.user.Name}}</td>
-					<td>{{.user.Age}}</td>
-					<td>{{.user.Sex}}</td>
-					<td>{{.user.Email}}</td>
-					<td>{{.user.WebSite}}</td>
+					<td>{{.Name}}</td>
+					<td>{{.Age}}</td>
+					<td>{{.Sex}}</td>
+					<td>{{.Email}}</td>
+					<td>{{.WebSite}}</td>
 				</tr>
-				<tr>
-					<td>{{.user.Name}}</td>
-					<td>{{.user.Age}}</td>
-					<td>{{.user.Sex}}</td>
-					<td>{{.user.Email}}</td>
-					<td>{{.user.WebSite}}</td>
-				</tr>
+				{{end}}
 			</table>
 		</div>
 	</div><!-- end content -->

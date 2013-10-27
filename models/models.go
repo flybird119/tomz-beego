@@ -7,7 +7,7 @@ import (
 
 	"github.com/Unknwon/com"
 	"github.com/astaxie/beego/orm"
-	_ "github.com/mattn/go-sqllite3"
+	_ "github.com/mattn/go-sqlite3"
 )
 
 const (

@@ -10,11 +10,11 @@ type MainController struct {
 }
 
 func NewDefaultUser(count int) (u []models.User) {
-	var users = [count]models.User
+	var users [int]models.User
 	for i := 0; i < count; i++ {
-		users[i] = models.User{"Tom Zhou", 23, "M", "zhouytao@yeah.net", "tomz.blog"}
+		users[i] = models.User{Name: "Tom Zhou", Age: 23, Sex: "M", Email: "zhouytao@yeah.net", HomePage: "tomz.blog"}
 	}
-	return users;
+	return users
 }
 
 func (this *MainController) Get() {
