@@ -1,7 +1,11 @@
 package controllers
 
 import (
+	"github.com/Unknwon/com"
 	"github.com/astaxie/beego"
+	"strconv"
+	"strings"
+	"time"
 	"tomz/models"
 )
 
@@ -15,6 +19,18 @@ func NewDefaultUser(count int) (u []models.User) {
 		users[i] = models.User{Name: "Tom Zhou", Age: 23, Sex: "M", Email: "zhouytao@yeah.net", HomePage: "tomz.blog"}
 	}
 	return users
+}
+
+func GetAgeDesc(birth time.Time) string {
+	temp := time.Now().Unix() - birth.Unix()
+	t := time.Unix(int64(temp), 0)
+
+	var month string
+	if t.Month() >= 6 {
+		month = "半"
+	}
+
+	return
 }
 
 func (this *MainController) Get() {
