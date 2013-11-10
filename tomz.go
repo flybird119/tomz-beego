@@ -8,10 +8,14 @@ import (
 )
 
 func init() {
-	// models
+	models.RegisterDB()
 }
 
 func main() {
+	orm.Debug = true
+	orm.RunSyncdb("default", false, true)
+
+	beego.SetStaticPath("/static", "static")
 
 	beego.Router("/", &controllers.MainController{})
 	beego.Router("/add", &controllers.AddController{})

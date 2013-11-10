@@ -38,13 +38,12 @@
 		
 		<div>
 			<table>
-				{{rang .user}}
+				{{with .user}}
 				<tr>
 					<td>{{.Name}}</td>
-					<td>{{.Age}}</td>
 					<td>{{.Sex}}</td>
 					<td>{{.Email}}</td>
-					<td>{{.WebSite}}</td>
+					<td>{{.HomePage}}</td>
 				</tr>
 				{{end}}
 			</table>
