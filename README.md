@@ -1,8 +1,8 @@
 tomz
 ====
 
-tomz 是一个基于互联网移动平台开发的web应用，主要用于移动终端个人博客系统.
-前端主要技术：jQuery Mobile         服务端：golang
+tomz 是一个基于互联网移动平台开发的web应用，主要用于个人博客系统.
+前端主要技术：jQuery Bootstap HTML CSS        服务端：golang
 
 
 在环境变量中设置根目录 $GOPATH,在 $GOPATH 下新建 src 目录，用于存放web app,
@@ -29,7 +29,9 @@ tomz 是一个基于互联网移动平台开发的web应用，主要用于移动
 
 第三方依赖：
 
-  tomz依赖第三方工具beego作为开发框架，
+  go-sqlite3
+
+  第三方工具beego作为开发框架，
 
   通过 go get github.com/astaxie/beego 下载工具
 

@@ -1,60 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 
-　<head>
-　 <title>Index Page</title>
-　 <meta name="viewport" content="width=device-width, initial-scale=1">
-　 {{template "head"}}
-  </head>
+<head>
+	<title>Tom' Blog</title>
+
+	<!-- 在移动设备浏览器上，通过为viewport meta标签添加user-scalable=no可以禁用其缩放（zooming）功能 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+	
+	{{template "head"}}
+</head><!-- end head -->
+
 <body>
 
-<div class="page" data-role="page" data-fullscreen="false" data-title="Page Foo">
+	{{template "navbar"}}
 
-	<div class="header" data-role="header" data-position="fixed">
-		<a data-rel="back" data-icon="back">back</a>
-		<h1>{{.Website}}</h1>
-	</div><!-- end header -->
+	<div class="container page">
 
-	<div class="content" data-role="content">
-		<ul data-role="listview" data-inset="true" data-filter="true">
-			<li><a href="" herf="/test1">跳转页面1</a></li>
-			<li><a href="" herf="#2">跳转页面2</a></li>
-			<li><a href="" herf="#3">跳转页面3</a></li>
-			<li><a href="" herf="#4">跳转页面4</a></li>
-			<li><a href="" herf="#5">跳转页面5</a></li>
-			<li><a href="" herf="#5">跳转页面6</a></li>
-			<li><a href="" herf="#5">跳转页面7</a></li>
-			<li><a href="" herf="#5">跳转页面8</a></li>
-			<li><a href="" herf="#5">跳转页面9</a></li>
-			<li><a href="" herf="#5">跳转页面10</a></li>
-			<li><a href="" herf="#5">跳转页面11</a></li>
-			<li><a href="" herf="#5">跳转页面12</a></li>
-			<li><a href="" herf="#5">跳转页面13</a></li>
-			<li><a href="" herf="#5">跳转页面14</a></li>
-			<li><a href="" herf="#5">跳转页面15</a></li>
-			<li><a href="" herf="#5">跳转页面16</a></li>
-			<li><a href="" herf="#5">跳转页面17</a></li>
-		</ul>
+		<div class="row header" data-role="header" data-position="fixed">
+			<a data-rel="back" data-icon="back">back</a>
+			<h1>{{.Website}}</h1>
+		</div><!-- end header -->
+
+		<div class="row content" data-role="content">
+			<ul data-role="listview" data-inset="true" data-filter="true">
+				<li><a href="" herf="/test1">跳转页面1</a></li>
+				<li><a href="" herf="#2">跳转页面2</a></li>
+				<li><a href="" herf="#3">跳转页面3</a></li>
+				<li><a href="" herf="#5">跳转页面17</a></li>
+			</ul>
+			
+			<div>
+				<table>
+					{{with .user}}
+					<tr>
+						<td>{{.Name}}</td>
+						<td>{{.Sex}}</td>
+						<td>{{.Email}}</td>
+						<td>{{.HomePage}}</td>
+					</tr>
+					{{end}}
+				</table>
+			</div>
+		</div><!-- end content -->
 		
-		<div>
-			<table>
-				{{with .user}}
-				<tr>
-					<td>{{.Name}}</td>
-					<td>{{.Sex}}</td>
-					<td>{{.Email}}</td>
-					<td>{{.HomePage}}</td>
-				</tr>
-				{{end}}
-			</table>
+		<div class="row footer" data-role="footer" data-position="fixed">
+			{{template "footer"}}
 		</div>
-	</div><!-- end content -->
-	
-	<div class="footer" data-role="footer" data-position="fixed">
-		{{template "footer"}}
-	</div>
 
-</div><!-- /page -->
+	</div><!-- /page -->
 
 </body>
 </html>
