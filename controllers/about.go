@@ -2,10 +2,11 @@ package controllers
 
 import "github.com/astaxie/beego"
 
-type AddController struct {
+type AboutController struct {
 	beego.Controller
 }
 
-func (this *AddController) Get() {
+func (this *AboutController) Get() {
+	this.Data["isAboutPage"] = true
 	this.TplNames = "add.html"
 }

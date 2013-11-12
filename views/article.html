@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<title>Tom'Blog -- Article</title>
+
+	<!-- 在移动设备浏览器上，通过为viewport meta标签添加user-scalable=no可以禁用其缩放（zooming）功能 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+	
+	{{template "head"}}
+</head><!-- end head -->
+
+<body>
+
+	{{template "navbar" .}}
+
+	<div class="container">
+
+		<div class="jumbotron">
+		  	<h1>{{.Website}}</h1>
+			<h1>Navbar example</h1>
+			<p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+			<p>To see the difference between static and fixed top navbars, just scroll.</p>
+			<p>
+			  <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
+			</p>
+		</div>
+
+		<div class="row">
+		  <div class="col-sm-6 col-md-4">
+		    <div class="thumbnail">
+		      <img data-src="holder.js/300x200" alt="...">
+		      <div class="caption">
+		        <h3>Thumbnail label</h3>
+		        <p>...</p>
+		        <p><a href="#" class="btn btn-primary" role="button">Button</a><a href="#" class="btn btn-default" role="button">Button</a></p>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="col-sm-6 col-md-4">
+		    <div class="thumbnail">
+		      <img data-src="holder.js/300x200" alt="...">
+		      <div class="caption">
+		        <h3>Thumbnail label</h3>
+		        <p>...</p>
+		        <p><a href="#" class="btn btn-primary" role="button">Button</a><a href="#" class="btn btn-default" role="button">Button</a></p>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="col-sm-6 col-md-4">
+		    <div class="thumbnail">
+		      <img data-src="holder.js/300x200" alt="...">
+		      <div class="caption">
+		        <h3>Thumbnail label</h3>
+		        <p>...</p>
+		        <p><a href="#" class="btn btn-primary" role="button">Button</a><a href="#" class="btn btn-default" role="button">Button</a></p>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="row">
+			<div>
+				<table>
+					{{with .user}}
+					<tr>
+						<td>{{.Name}}</td>
+						<td>{{.Sex}}</td>
+						<td>{{.Email}}</td>
+						<td>{{.HomePage}}</td>
+					</tr>
+					{{end}}
+				</table>
+			</div>
+		</div><!-- end content -->
+		
+		<div class="row footer" data-role="footer" data-position="fixed">
+			{{template "footer"}}
+		</div>
+
+	</div><!-- /page -->
+
+</body>
+</html>

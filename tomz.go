@@ -16,9 +16,11 @@ func main() {
 	orm.RunSyncdb("default", false, true)
 
 	beego.SetStaticPath("/static", "static")
+	beego.SetStaticPath("/views", "views")
 
 	beego.Router("/", &controllers.MainController{})
-	beego.Router("/add", &controllers.AddController{})
-	beego.Router("/edit", &controllers.EditController{})
+	beego.Router("/Article", &controllers.ArticleController{})
+	beego.Router("/Gallery", &controllers.GalleryController{})
+	beego.Router("/About", &controllers.EditController{})
 	beego.Run()
 }
