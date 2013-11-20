@@ -17,14 +17,16 @@
         <li {{if .isGalleryPage}}class="active"{{end}}><a href="/Gallery">相册</a></li>
         <li {{if .isAboutPage}}class="active"{{end}}><a href="/About">关于</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+    </div><!--/.nav-collapse -->
+    <div class="pull-right">
+      <ul class="nav nav-pills">
         <li><a href="#">Default</a></li>
         <li><a href="./">Static top</a></li>
         <li><a href="#">Fixed top</a></li>
         <li class="divider"></li>
         <li><a href="/login" data-toggle="modal" data-target="#loginDialog">登入</a></li>
       </ul>
-    </div><!--/.nav-collapse -->
+    </div>
   </div>
 </div>
 
