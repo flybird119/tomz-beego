@@ -1,6 +1,7 @@
 package models
 
 import (
+	"math/rand"
 	"os"
 	"path"
 	"time"
@@ -29,8 +30,6 @@ type User struct {
 	HomePage  string
 }
 
-
-
 type Article struct {
 	Id          int64
 	Type        string
@@ -55,4 +54,25 @@ func RegisterDB() {
 	orm.RegisterModel(new(User), new(Article))
 	orm.RegisterDriver(SQLITE3_DRIVER, orm.DR_Sqlite)
 	orm.RegisterDataBase("default", SQLITE3_DRIVER, DB_NAME, 10)
+}
+
+func Random() int64 {
+	return rand.New(rand.NewSource(time.Now().UnixNano())).Int63n(10)
+}
+
+func GetById(id int64) (user *User, err error) {
+	// err = orm.NewOrm()
+
+	// if err == orm.ErrMissPK {
+	// 	beego.Error("主键不存在!")
+	// }
+	return nil, nil
+}
+
+// return id, err
+func Add(article Article) (id int64, err error) {
+	var o orm.Ormer = orm.NewOrm()
+	article.Id = Random()
+	id, err = o.Insert(article)
+	return
 }

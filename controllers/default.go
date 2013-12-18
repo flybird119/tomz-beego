@@ -30,4 +30,6 @@ func GetAgeDesc(birth time.Time) string {
 func (this *MainController) Get() {
 	this.Data["user"] = NewDefaultUser()
 	this.TplNames = "index.html"
+
+	this.Data["isLogin"] = checkAccount(this.Ctx, this.Input())
 }

@@ -6,19 +6,16 @@
 <!--<![endif]-->
 
 <head>
-	<title>Tom'Blog</title>
-
-	<!-- 在移动设备浏览器上，通过为viewport meta标签添加user-scalable=no可以禁用其缩放（zooming）功能 -->
-	<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
 	{{template "head"}}
-
-</head><!-- end head -->
+</head>
 
 <body>
+	
+	<!-- navbar 导航菜单模板 -->
+	{{template "navbar" .}}
 
-	{{template "navbar" .}}<!-- navbar 导航菜单模板 -->
+	<article class="container">
 
-	<div class="container">
 
 		<div class="jumbotron section">
 			<h1>{{.Website}}</h1>
@@ -33,6 +30,11 @@
 				<a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
 			</p>
 		</div>
+
+		<video width="320" height="240" controls="controls">
+			<source src="movie.ogg" type="video/ogg">		
+			<source src="movie.mp4" type="video/mp4">Your browser does not support the video tag.
+		</video>
 
 		<div class="row">
 			<div class="col-sm-6 col-md-4">
@@ -90,12 +92,9 @@
 				</table>
 			</div>
 		</div>
-		<!-- end content -->
+	</article>
 
-		<div class="row footer">{{template "footer"}}</div>
-
-	</div>
-	<!-- /page -->
+	{{template "footer"}}
 
 </body>
 </html>

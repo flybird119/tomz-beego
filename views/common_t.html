@@ -1,0 +1,26 @@
+{{define "common_other"}}
+
+<!-- 关于地图数据弹窗 -->
+<div id="about-maps" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">关于地图数据</h3>
+    </div>
+    <div class="modal-body">
+        <p>地图数据来自 <a href="http://www.naturalearthdata.com/" target="_blank">Natural Earth</a></p>
+        <hr class="soften">
+        <h4>关于坐标点数据</h4>
+        <p>地图中以红点标示的为我曾到达过的城市，其中：</p>
+        <ul>
+            <li><p>若新到达的城市旁已有相邻的曾到达城市，且经度和（或）纬度相差小于 1° 的，仅标示最先到达的城市；</p></li>
+            <li><p>2009 年或更早的坐标信息，来源于在 Google 地图 查询中到的该城市坐标，2010 年后的坐标信息来源于使用 iPhone 在当地所拍摄照片时所记录的 GPS 信息；</p></li>         
+            <li><p>坐标点和其中所标出的到达年份为非完整数据；</p></li> 
+            <li><p>最后更新时间：2013 年 7 月</p></li>
+        </ul>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+    </div>
+</div>
+
+{{end}}

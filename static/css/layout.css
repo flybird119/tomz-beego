@@ -1,18 +1,26 @@
-body{
+html{
 	font: normal 100% Helvetica, Arial, sans-serif;
-	overflow-y:scroll!important;
-	overflow-y:auto;
+	overflow: auto;
 }
 
-.col-xs-1,.col-sm-1,.col-md-1,.col-lg-1,.col-xs-2,.col-sm-2,.col-md-2,.col-lg-2,.col-xs-3,.col-sm-3,.col-md-3,.col-lg-3,.col-xs-4,.col-sm-4,.col-md-4,.col-lg-4,.col-xs-5,.col-sm-5,.col-md-5,.col-lg-5,.col-xs-6,.col-sm-6,.col-md-6,.col-lg-6,.col-xs-7,.col-sm-7,.col-md-7,.col-lg-7,.col-xs-8,.col-sm-8,.col-md-8,.col-lg-8,.col-xs-9,.col-sm-9,.col-md-9,.col-lg-9,.col-xs-10,.col-sm-10,.col-md-10,.col-lg-10,.col-xs-11,.col-sm-11,.col-md-11,.col-lg-11,.col-xs-12,.col-sm-12,.col-md-12,.col-lg-12{position:relative;min-height:1px;padding-right:0px;padding-left:0px}
-
-.row {
+/*.col-xs-1,.col-sm-1,.col-md-1,.col-lg-1,.col-xs-2,.col-sm-2,.col-md-2,.col-lg-2,.col-xs-3,.col-sm-3,.col-md-3,.col-lg-3,.col-xs-4,.col-sm-4,.col-md-4,.col-lg-4,.col-xs-5,.col-sm-5,.col-md-5,.col-lg-5,.col-xs-6,.col-sm-6,.col-md-6,.col-lg-6,.col-xs-7,.col-sm-7,.col-md-7,.col-lg-7,.col-xs-8,.col-sm-8,.col-md-8,.col-lg-8,.col-xs-9,.col-sm-9,.col-md-9,.col-lg-9,.col-xs-10,.col-sm-10,.col-md-10,.col-lg-10,.col-xs-11,.col-sm-11,.col-md-11,.col-lg-11,.col-xs-12,.col-sm-12,.col-md-12,.col-lg-12{position:relative;min-height:1px;padding-right:0px;padding-left:0px}
+*/
+/*.row {
 	margin-left: 0px;
 	margin-right: 0px;
-}
+}*/
 
 .jumbotron {
 	margin-top: 70px;
+}
+
+/*--------------------重置Bootstarp样式----------------------*/
+.navbar-collapse {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.navbar-form {
+	margin-right: -20px;
 }
 
 .box-show {
@@ -35,37 +43,66 @@ body{
 	box-shadow: 0px 3px 8px rgba(0,0,0,0.115);      	 /* For Latest Opera */
 }
 
+
+/* Windows 8 中的 Internet Explorer 10 和 Windows Phone 8, 具体参见http://v3.bootcss.com/getting-started/#browsers */
+@-webkit-viewport   { width: device-width; }
+@-moz-viewport      { width: device-width; }
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }
  
+
+
 /* = 伪类 Pseudo
 ----------------------------------------------- */
 ::-webkit-scrollbar {
+    width: 10px;
 	width: 10px;
 	background: #cacaca url("http://dw-resources.qiniudn.com/images/patterns/mooning.jpg");
 	opacity: .8;	
 	-webkit-transition: .25s;
 }
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+	background: #cacaca url("http://dw-resources.qiniudn.com/images/patterns/mooning.jpg");
+	/* border: thin solid lightgray; 
+	box-shadow: 0px 0px 3px #dfdfdf inset; */
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+	-webkit-transition: .25s;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(88,88,88,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+	background: #969696;
+	/* border: thin solid gray; */
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+	-webkit-transition: .25s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #7d7d7d;
+	-webkit-transition: .25s;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(0,0,0,0.4); 
+  background: rgba(0, 0, 0, 0.4);
+}
+
 ::-webkit-scrollbar-button {
 	width: 10px;
 	height: 5px;
 	-webkit-transition: .25s;
 }
-::-webkit-scrollbar-track {
-	background: #cacaca url("http://dw-resources.qiniudn.com/images/patterns/mooning.jpg");
-	/* border: thin solid lightgray; 
-	box-shadow: 0px 0px 3px #dfdfdf inset; */
-	border-radius: 10px;
-	-webkit-transition: .25s;
-}
-::-webkit-scrollbar-thumb {
-	background: #969696;
-	/* border: thin solid gray; */
-	border-radius: 10px;
-	-webkit-transition: .25s;
-}
-::-webkit-scrollbar-thumb:hover {
-	background: #7d7d7d;
-	-webkit-transition: .25s;
-}
+
 
 ::selection {
     background:#d3d3d3; 

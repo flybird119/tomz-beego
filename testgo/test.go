@@ -7,14 +7,16 @@ import (
 )
 
 func main() {
-
 	// f := closure(10)
 	// fmt.Println(f(1))
 	// fmt.Println(f(2))
 
+	// fmt.Println(Test_defer())
+	fmt.Println(Test_defer1())
+	fmt.Println(Test_defer2())
 }
 
-func Test_defer() {
+func Test_defer() string {
 	fmt.Println("a")
 	defer fmt.Println("b")
 
@@ -24,6 +26,14 @@ func Test_defer() {
 		}()
 	}
 
+	var result string
+
+	defer func() {
+		result = "test"
+	}()
+
+	fmt.Println("d")
+
 	defer fmt.Println("c")
 
 	for i := 0; i < 3; i++ {
@@ -31,6 +41,23 @@ func Test_defer() {
 		defer fmt.Println(i)
 	}
 
+	return result
+}
+
+// 最后结果返回 1， 说明内部匿名函数在return语句之后执行
+func Test_defer1() (result int) {
+	defer func() {
+		result++
+	}()
+	return 0
+}
+
+func Test_defer2() (result int) {
+	t := 5
+	defer func() {
+		t = t + 2
+	}()
+	return t
 }
 
 func Test_strings() {

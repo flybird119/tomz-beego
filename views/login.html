@@ -1,14 +1,13 @@
-<!DOCTYPE html>
+<!--[if lt IE 9]>
+<html id="ie8" lang="zh-CN">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
 <html lang="zh-CN">
+<!--<![endif]-->
 
 <head>
-	<title>Tom'Blog</title>
-
-	<!-- 在移动设备浏览器上，通过为viewport meta标签添加user-scalable=no可以禁用其缩放（zooming）功能 -->
-	<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
 	{{template "head"}}
-
-</head><!-- end head -->
+</head>
 
 <body>
 
@@ -88,7 +87,7 @@
 		</div>
 		<!-- end content -->
 
-		<div class="row footer">{{template "footer"}}</div>
+		{{template "footer"}}
 
 	</div>
 	<!-- /page -->
