@@ -3,7 +3,6 @@ package controllers
 import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
-	"log"
 	"net/url"
 	"tomz/models"
 )
@@ -13,6 +12,7 @@ type LoginController struct {
 }
 
 func (this *LoginController) Get() {
+	beego.Info("Login Get method")
 	this.TplNames = "index.html"
 }
 
@@ -21,7 +21,7 @@ func (this *LoginController) Post() {
 	password := this.Input().Get("password")
 	autoLogin := this.Input().Get("autoLogin") == "on"
 
-	if beego.AppConfig.String("username") == username && beego.AppConfig.String("password") == password {
+	if checkAccount(this.Ctx, this.Input()) {
 		maxAge := 0
 		if autoLogin {
 			maxAge = 1<<31 - 1
@@ -29,7 +29,6 @@ func (this *LoginController) Post() {
 
 		this.Ctx.SetCookie("username", username, maxAge, "/")
 		this.Ctx.SetCookie("password", password, maxAge, "/")
-
 	}
 
 	this.Redirect("/", 301)
@@ -38,30 +37,33 @@ func (this *LoginController) Post() {
 
 // 验证Cookie中的帐户信息
 func checkAccount(ctx *context.Context, input url.Values) bool {
-	ck, err := ctx.Request.Cookie("username")
-	if err != nil {
-		return false
+	var username, password string
+	ck, _ := ctx.Request.Cookie("username")
+	if ck != nil {
+		username = ck.Value
 	}
-	username := ck.Value
-
-	ck, err = ctx.Request.Cookie("password")
-	if err != nil {
-		return false
+	if len(username) == 0 {
+		username = input.Get("username")
 	}
-	passwrod := ck.Value
 
-	var user models.User = models.User{
-		Id:       1,
-		UserCode: "username",
-		PassWord: "password",
+	ck, _ = ctx.Request.Cookie("password")
+	if ck != nil {
+		password = ck.Value
+	}
+	if len(password) == 0 {
+		password = input.Get("password")
 	}
 
 	u, err := models.GetById(1)
-	if u.UserCode == username && u.PassWord == passwrod {
-		beego.Info("用户登陆成功!")
-		log.Println("用户登陆成功!")
+	if err != nil {
+		panic("验证帐户信息出错！ " + err.Error())
+	}
+
+	if u.Email == username && u.PassWord == password {
+		return true
+	} else {
+		return false
 	}
 
 	// return beego.AppConfig.String("username") == username && beego.AppConfig.String("password") == passwrod
-	return user.UserCode == username && user.PassWord == passwrod
 }

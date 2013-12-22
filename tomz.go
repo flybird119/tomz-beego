@@ -16,7 +16,9 @@ func main() {
 	orm.RunSyncdb("default", false, true)
 
 	beego.SetStaticPath("/static", "static")
-	beego.BeeLogger.SetLogger("file", `{"filename":"logs/logs.log"}`)
+
+	beego.SetLogger("file", `{"filename":"logs/test.log"}`)
+	beego.SetLevel(beego.LevelInfo)
 
 	beego.Router("/", &controllers.MainController{})
 	beego.Router("/Article", &controllers.ArticleController{})

@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/Unknwon/com"
+	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 	_ "github.com/mattn/go-sqlite3"
 )
@@ -56,23 +57,28 @@ func RegisterDB() {
 	orm.RegisterDataBase("default", SQLITE3_DRIVER, DB_NAME, 10)
 }
 
-func Random() int64 {
+func RandomKey() int64 {
 	return rand.New(rand.NewSource(time.Now().UnixNano())).Int63n(10)
 }
 
-func GetById(id int64) (user *User, err error) {
-	// err = orm.NewOrm()
+func GetById(id int64) (u User, err error) {
+	u = User{Id: id}
+	err = orm.NewOrm().Read(&u)
 
-	// if err == orm.ErrMissPK {
-	// 	beego.Error("主键不存在!")
-	// }
-	return nil, nil
+	if err == orm.ErrMissPK {
+		beego.Error("主键不存在!")
+	}
+	return
 }
 
 // return id, err
-func Add(article Article) (id int64, err error) {
+func Add(article *Article) (id int64, err error) {
+	if article == nil {
+		return
+	}
+
 	var o orm.Ormer = orm.NewOrm()
-	article.Id = Random()
+	article.Id = RandomKey()
 	id, err = o.Insert(article)
 	return
 }
