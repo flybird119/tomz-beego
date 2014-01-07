@@ -33,6 +33,6 @@ tomz 是一个基于互联网移动平台开发的web应用，主要用于个人
 
   第三方工具beego作为开发框架，
 
-  通过 go get github.com/astaxie/beego 下载工具
+  通过 go get github.com/astaxie/beego 下载
 
   更多信息请查看beego的官网：http://beego.me/quickstart

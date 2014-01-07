@@ -11,4 +11,6 @@ type ArticleController struct {
 func (this *ArticleController) Get() {
 	this.Data["isArticlePage"] = true
 	this.TplNames = "article.html"
+
+	this.Data["isLogin"] = checkAccount(this.Ctx, this.Input())
 }

@@ -11,4 +11,6 @@ type GalleryController struct {
 func (this *GalleryController) Get() {
 	this.Data["isGalleryPage"] = true
 	this.TplNames = "gallery.html"
+
+	this.Data["isLogin"] = checkAccount(this.Ctx, this.Input())
 }

@@ -9,4 +9,6 @@ type AboutController struct {
 func (this *AboutController) Get() {
 	this.Data["isAboutPage"] = true
 	this.TplNames = "add.html"
+
+	this.Data["isLogin"] = checkAccount(this.Ctx, this.Input())
 }
