@@ -1,0 +1,105 @@
+#main {
+    width: 900px;
+    margin: 50px auto;
+}
+
+
+/* pt 尾巴 */
+.pt, .pt-inner {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+
+/*  marquee   */
+.mq {
+    position: relative;
+    height: 300px;
+    border: 1px solid rgb(206,206,206);
+	 overflow: hidden;
+}
+
+.mq-c {
+    position: relative;
+    height: 280px;
+    margin: 10px;
+    overflow: hidden;
+}
+
+.mq-p {
+    position: absolute;
+    height: 280px;
+    top: 0;
+    left: -1325px;
+    overflow: hidden;
+}
+
+.mq-i {
+    float: left;
+    font-size: 36px;
+    color: rgb(255,255,255);
+    line-height: 280px;
+    font-weight: bold;
+    text-align: center;
+    margin-right: 10px;
+    width: 700px;
+    height: 280px;
+    background-color: rgb(68,68,68);
+}
+
+.mq-btn {
+    position: absolute;
+    top: 50%;
+    margin-top: -23px;
+    width: 24px;
+    height: 46px;
+    background-color: rgb(255,255,255);
+}
+
+.mq-btn.left {
+    left: 0;
+    border-radius: 0 23px 23px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,1);
+}
+
+.mq-btn.right {
+    right: 0;
+    border-radius: 23px 0 0 23px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.6);
+}
+
+.mq-btn .pt {
+    top: 50%;
+    margin-top: -8px;
+    border-width: 8px;
+    border-color: transparent rgb(0,0,0) transparent transparent;
+}
+
+.mq-btn .pt-inner {
+    top: -8px;
+    border-width: 8px;
+}
+
+.mq-btn.left .pt {
+    left: 50%;
+    margin-left: -16px;
+    border-color: transparent rgb(68,68,68) transparent transparent;
+}
+
+.mq-btn.left .pt-inner {
+    left: -4px;
+    border-color: transparent rgb(255,255,255) transparent transparent;
+}
+
+.mq-btn.right .pt {
+    right: 50%;
+    margin-right: -16px;
+    border-color: transparent transparent transparent rgb(68,68,68);
+}
+
+.mq-btn.right .pt-inner {
+    right: -4px;
+    border-color: transparent transparent transparent rgb(255,255,255);
+}

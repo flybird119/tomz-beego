@@ -16,67 +16,81 @@
 
 	<div class="container">
 
-		<div class="jumbotron">
-		  	<h1>{{.Website}}</h1>
-			<h1>Navbar example</h1>
-			<p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-			<p>To see the difference between static and fixed top navbars, just scroll.</p>
-			<p>
-			  <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-			</p>
-		</div>
-
-		<div class="row">
-		  <div class="col-sm-6 col-md-4">
-		    <div class="thumbnail">
-		      <img data-src="holder.js/300x200" alt="...">
-		      <div class="caption">
-		        <h3>Thumbnail label</h3>
-		        <p>...</p>
-		        <p><a href="#" class="btn btn-primary" role="button">Button</a><a href="#" class="btn btn-default" role="button">Button</a></p>
-		      </div>
-		    </div>
-		  </div>
-		  <div class="col-sm-6 col-md-4">
-		    <div class="thumbnail">
-		      <img data-src="holder.js/300x200" alt="...">
-		      <div class="caption">
-		        <h3>Thumbnail label</h3>
-		        <p>...</p>
-		        <p><a href="#" class="btn btn-primary" role="button">Button</a><a href="#" class="btn btn-default" role="button">Button</a></p>
-		      </div>
-		    </div>
-		  </div>
-		  <div class="col-sm-6 col-md-4">
-		    <div class="thumbnail">
-		      <img data-src="holder.js/300x200" alt="...">
-		      <div class="caption">
-		        <h3>Thumbnail label</h3>
-		        <p>...</p>
-		        <p><a href="#" class="btn btn-primary" role="button">Button</a><a href="#" class="btn btn-default" role="button">Button</a></p>
-		      </div>
-		    </div>
-		  </div>
-		</div>
-
-		<div class="row">
-			<div>
-				<table>
-					{{with .user}}
-					<tr>
-						<td>{{.Name}}</td>
-						<td>{{.Sex}}</td>
-						<td>{{.Email}}</td>
-						<td>{{.HomePage}}</td>
-					</tr>
-					{{end}}
-				</table>
+		<div class="row-fluid">
+			<div class="section">
+				<h1>Navbar example</h1>
+				<p>
+					This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.
+				</p>
+				<p>
+					To see the difference between static and fixed top navbars, just scroll.
+				</p>
+				<p>
+					<a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
+				</p>
 			</div>
-		</div><!-- end content -->
-		
-		{{template "footer"}}
+		</div>
 
+		<div class="row-fluid">
+			<ul class="breadcrumb">
+				<li>基本功能：</li>
+				<li>
+					分页
+					<span class="divider">/</span>
+				</li>
+				<li>
+					排序
+					<span class="divider">/</span>
+				</li>
+				<li>过滤</li>
+			</ul>
+		</div>
+
+		<div class="row-fluid section">
+			<div class="span9">
+				<ul class="unstyled article">
+					<li>
+						<div class="article_item">
+							<div class="title"><h3>Title</h3></div>
+							<div class="bt">
+								<span>发布时间: <a href="#">2014-02-10</a></span>
+								<span>作者: <a href="#">zhouyantao</a></span>
+								<span>分类: <a href="#">分类1</a> , <a href="#">分类2</a></span>
+								<span><i class="icon-eye-open"></i><a href="#">22</a></span>
+								<span><i class="icon-comment"></i><a href="#">103</a></span>
+							</div>
+							<hr class="separator">
+							<div class="bd">内容内容内容内容<p>内容内容内容内容</p></div>
+							<div class="">
+								
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="article_item">
+							<div class="title"><h3>Title</h3></div>
+							<div class="bt">
+								<span>发布时间: 2014-02-10</span>
+								<span>作者: <a href="#">zhouyantao</a></span>
+								<span>分类: <a href="#">分类1</a> , <a href="#">分类2</a></span>
+								<span><i class="icon-eye-open"></i><a href="#">22</a></span>
+								<span><i class="icon-comment"></i><a href="#">103</a></span>
+							</div>
+							<div class="divider"></div>
+							<div class="bd">内容内容内容内容<p>内容内容内容内容</p><p>内容内容内容内容</p></div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="span3 brak"></div>
+		</div>
+		
 	</div><!-- /page -->
 
+	{{template "footer"}}
+
+	
+
 </body>
+
 </html>

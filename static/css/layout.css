@@ -1,17 +1,87 @@
-html{
+/**
+ * 全局样式
+ */
+body {
 	font: normal 100% Helvetica, Arial, sans-serif;
-	overflow: auto;
+	overflow-y: scroll
 }
 
-/*.col-xs-1,.col-sm-1,.col-md-1,.col-lg-1,.col-xs-2,.col-sm-2,.col-md-2,.col-lg-2,.col-xs-3,.col-sm-3,.col-md-3,.col-lg-3,.col-xs-4,.col-sm-4,.col-md-4,.col-lg-4,.col-xs-5,.col-sm-5,.col-md-5,.col-lg-5,.col-xs-6,.col-sm-6,.col-md-6,.col-lg-6,.col-xs-7,.col-sm-7,.col-md-7,.col-lg-7,.col-xs-8,.col-sm-8,.col-md-8,.col-lg-8,.col-xs-9,.col-sm-9,.col-md-9,.col-lg-9,.col-xs-10,.col-sm-10,.col-md-10,.col-lg-10,.col-xs-11,.col-sm-11,.col-md-11,.col-lg-11,.col-xs-12,.col-sm-12,.col-md-12,.col-lg-12{position:relative;min-height:1px;padding-right:0px;padding-left:0px}
-*/
-/*.row {
-	margin-left: 0px;
-	margin-right: 0px;
-}*/
+.login {
+	max-width: 300px;
+	padding: 19px 29px 19px;
+	margin: 0 auto 20px;
+	background-color: #fff;
+	border: 0px solid #e5e5e5;
+	-webkit-border-radius: 5px;
+	   -moz-border-radius: 5px;
+	        border-radius: 5px;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+	   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+	        box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
 
-.jumbotron {
-	margin-top: 70px;
+
+
+
+/*============文章============*/
+.article_item {
+	padding: 0 0 0 10px;
+	margin-bottom: 20px;
+}
+
+.article_item .title {
+	margin-bottom: 0;
+}
+
+.bt {
+	font-size: 11px;
+}
+
+.bt span { 
+	padding-right: 5px;
+}
+
+.bt, .bt a {
+	color: #A9A9A9;
+}
+
+.bt a:hover, .bt a:focus {
+	color: #0088cc;
+	text-decoration: none;
+}
+
+.separator {
+	margin: 2px 1px;
+}
+
+.section {
+	margin: 0 0 20px;
+	border: 1px solid rgba(0,0,0,0.055);
+	-moz-box-shadow: 0px 3px 8px rgba(0,0,0,0.115);     /* For Firefox3.6+ */
+	-webkit-box-shadow: 0px 3px 8px rgba(0,0,0,0.115);  /* For Chrome5+, Safari5+ */
+	box-shadow: 0px 3px 8px rgba(0,0,0,0.115);      	 /* For Latest Opera */
+}
+
+.section:first-child {
+	padding: 20px;
+	border: 1px solid rgba(0,0,0,0.055);
+	-moz-box-shadow: 0px 3px 8px rgba(0,0,0,0.115);     /* For Firefox3.6+ */
+	-webkit-box-shadow: 0px 3px 8px rgba(0,0,0,0.115);  /* For Chrome5+, Safari5+ */
+	box-shadow: 0px 3px 8px rgba(0,0,0,0.115);      	 /* For Latest Opera */
+}
+
+/* 大屏幕 */
+@media (min-width: 980) {
+	.section:first-child {
+		margin-top: 50px;
+	}
+}
+ 
+/* 平板电脑和小屏电脑之间的分辨率 */
+@media (max-width: 979px) {
+	.section:first-child {
+		margin-top: 0;
+	}
 }
 
 /*--------------------重置Bootstarp样式----------------------*/
@@ -27,20 +97,13 @@ html{
 	margin-top: 70px;
 	margin-bottom: 10px;
 	border: 1px solid rgba(0,0,0,0.055);
-	-moz-box-shadow: 0px 3px 8px rgba(0,0,0,0.115);     /* For Firefox3.6+ */
+	-moz-box-shadow: 0px 3px 8px rgba(0,0,0,0.115);		/* For Firefox3.6+ */
 	-webkit-box-shadow: 0px 3px 8px rgba(0,0,0,0.115);  /* For Chrome5+, Safari5+ */
 	box-shadow: 0px 3px 8px rgba(0,0,0,0.115);      	 /* For Latest Opera */
 }
 
 .box-show, .box-show > div {
 	background: #ddd!important
-}
-
-.section {
-	border: 1px solid rgba(0,0,0,0.055);
-	-moz-box-shadow: 0px 3px 8px rgba(0,0,0,0.115);     /* For Firefox3.6+ */
-	-webkit-box-shadow: 0px 3px 8px rgba(0,0,0,0.115);  /* For Chrome5+, Safari5+ */
-	box-shadow: 0px 3px 8px rgba(0,0,0,0.115);      	 /* For Latest Opera */
 }
 
 
@@ -50,7 +113,569 @@ html{
 @-ms-viewport       { width: device-width; }
 @-o-viewport        { width: device-width; }
 @viewport           { width: device-width; }
- 
+
+
+/* 浅粉红 */
+.lightPink{
+	color: #FFB6C1;
+}
+/* 粉红 */
+.pink {
+	color: #FFC0CB;
+}
+/* 深红/猩红 */
+.crimson {
+	color: #DC143C;
+}
+/* 淡紫红 */
+.lavenderBlush {
+	color: #FFF0F5;
+}
+/* 弱紫罗兰红 */
+.paleVioletRed {
+	color: #DB7093;
+}
+/* 洋李色/李子紫 */
+.plum{
+	color: #DDA0DD;
+}
+/* 紫罗兰 */
+.violet{
+	color: #EE82EE;
+}
+
+/* 热情的粉红 */
+.hotPink {
+	color: /*#FF69B4;
+}
+/* 深粉红 */
+.deepPink {
+	color: #FF1493;
+}
+/* 中紫罗兰红 */
+.mediumVioletRed {
+	color: #C71585;
+}
+/* 暗紫色/兰花紫 */
+.orchid {
+	color: #DA70D6;
+}
+/* 蓟色 */
+.thistle {
+	color: #D8BFD8;
+}
+/* 洋红/玫瑰红 */
+.magenta {
+	color: /*#FF00FF;
+}
+/* 紫红/灯笼海棠 */
+.fuchsia {
+	color: #FF00FF;
+}
+/* 深洋红 */
+.darkMagenta {
+	color: #8B008B;
+}
+/* 紫色 */
+.purple {
+	color: #800080;
+}
+/* 中兰花紫 */
+.mediumOrchid {
+	color: #BA55D3;
+}
+/* 暗紫罗兰 */
+.darkViolet {
+	color: #9400D3;
+}
+/* 暗兰花紫 */
+.darkOrchid {
+	color: #9932CC;
+}
+/* 靛青/紫兰色 */
+.indigo {
+	color: #4B0082;
+}
+/* 蓝紫罗兰 */
+.blueViolet {
+	color: #8A2BE2;
+}
+/* 中紫色 */
+.mediumPurple {
+	color: #9370DB;
+}
+/* 中暗蓝色/中板岩蓝 */
+.mediumSlateBlue {
+	color: #7B68EE;
+}
+/* 石蓝色/板岩蓝 */
+.slateBlue {
+	color: #6A5ACD;
+}
+/* 暗灰蓝色/暗板岩蓝 */
+.darkSlateBlue {
+	color: #483D8B;
+}
+/* 淡紫色/熏衣草淡紫 */
+.lavender {
+	color: #E6E6FA;
+}
+/* 幽灵白 */
+.ghostWhite {
+	color: #F8F8FF;
+}
+/* 纯蓝 */
+.blue {
+	color: #0000FF;
+}
+/* 中蓝色 */
+.mediumBlue {
+	color: #0000CD;
+}
+/* 午夜蓝 */
+.midnightBlue {
+	color: #191970;
+}
+/* 暗蓝色 */
+.darkBlue {
+	color: #00008B;
+}
+/* 海军蓝 */
+.navy {
+	color: #000080;
+}
+/* 皇家蓝/宝蓝 */
+.royalBlue {
+	color: #4169E1;
+}
+/* 矢车菊蓝 */
+.cornflowerBlue {
+	color: #6495ED;
+}
+/* 亮钢蓝 */
+.lightSteelBlue {
+	color: #B0C4DE;
+}
+/* 亮蓝灰/亮石板灰 */
+.lightSlateGray {
+	color: #778899;
+}
+/* 灰石色/石板灰 */
+.slateGray {
+	color: #708090;
+}
+/* 闪兰色/道奇蓝 */
+.dodgerBlue {
+	color: #1E90FF;
+}
+/* 爱丽丝蓝 */
+.aliceBlue {
+	color: #F0F8FF;
+}
+/* 钢蓝/铁青 */
+.steelBlue {
+	color: #4682B4;
+}
+/* 亮天蓝色 */
+.lightSkyBlue {
+	color: #87CEFA;
+}
+/* 天蓝色 */
+.skyBlue {
+	color: #87CEEB;
+}
+/* 深天蓝 */
+.deepSkyBlue {
+	color: #00BFFF;
+}
+/* 亮蓝 */
+.lightBlue {
+	color: #ADD8E6;
+}
+/* 粉蓝色/火药青 */
+.powderBlue {
+	color: #B0E0E6;
+}
+/* 军兰色/军服蓝 */
+.cadetBlue {
+	color: #5F9EA0;
+}
+/* 蔚蓝色 */
+.azure {
+	color: #F0FFFF;
+}
+/* 淡青色 */
+.lightCyan {
+	color: #E0FFFF;
+}
+/* 弱绿宝石 */
+.paleTurquoise {
+	color: #AFEEEE;
+}
+/* 青色 */
+.cyan {
+	color: #00FFFF;
+}
+/* 浅绿色/水色 */
+.aqua {
+	color: #00FFFF;
+}
+/* 暗绿宝石 */
+.darkTurquoise {
+	color: #00CED1;
+}
+/* 暗瓦灰色/暗石板灰 */
+.darkSlateGray {
+	color: #2F4F4F;
+}
+/* 暗青色 */
+.darkCyan {
+	color: #008B8B;
+}
+/* 水鸭色 */
+.teal {
+	color: #008080;
+}
+/* 中绿宝石 */
+.mediumTurquoise {
+	color: #48D1CC;
+}
+/* 浅海洋绿 */
+.lightSeaGreen {
+	color: #20B2AA;
+}
+/* 绿宝石 */
+.turquoise {
+	color: #40E0D0;
+}
+/* 宝石碧绿 */
+.aquamarine {
+	color: #7FFFD4;
+}
+/* 中宝石碧绿 */
+.mediumAquamarine {
+	color: #66CDAA;
+}
+/* 中春绿色 */
+.mediumSpringGreen {
+	color: #00FA9A;
+}
+/* 薄荷奶油 */
+.mintCream {
+	color: #F5FFFA;
+}
+/* 春绿色 */
+.springGreen {
+	color: #00FF7F;
+}
+/* 中海洋绿 */
+.mediumSeaGreen {
+	color: #3CB371;
+}
+/* 海洋绿 */
+.seaGreen {
+	color: #2E8B57;
+}
+/* 蜜色/蜜瓜色 */
+.honeydew {
+	color: #F0FFF0;
+}
+/* 淡绿色 */
+.lightGreen {
+	color: #90EE90;
+}
+/* 弱绿色 */
+.paleGreen {
+	color: #98FB98;
+}
+/* 暗海洋绿 */
+.darkSeaGreen {
+	color: #8FBC8F;
+}
+/* 闪光深绿 */
+.limeGreen {
+	color: #32CD32;
+}
+/* 闪光绿 */
+.lime {
+	color: #00FF00;
+}
+/* 森林绿 */
+.forestGreen {
+	color: #228B22;
+}
+/* 纯绿 */
+.green {
+	color: #008000;
+}
+/* 暗绿色 */
+.darkGreen {
+	color: #006400;
+}
+/* 黄绿色/查特酒绿 */
+.chartreuse {
+	color: #7FFF00;
+}
+/* 草绿色/草坪绿 */
+.lawnGreen {
+	color: #7CFC00;
+}
+/* 绿黄色 */
+.greenYellow {
+	color: #ADFF2F;
+}
+/* 暗橄榄绿 */
+.darkOliveGreen {
+	color: #556B2F;
+}
+/* 黄绿色 */
+.yellowGreen {
+	color: #9ACD32;
+}
+/* 橄榄褐色 */
+.oliveDrab {
+	color: #6B8E23;
+}
+/* 米色/灰棕色 */
+.beige {
+	color: #F5F5DC;
+}
+/* 亮菊黄 */
+.lightGoldenrodYellow {
+	color: #FAFAD2;
+}
+/* 象牙色 */
+.ivory {
+	color: #FFFFF0;
+}
+/* 浅黄色 */
+.lightYellow {
+	color: #FFFFE0;
+}
+/* 纯黄 */
+.yellow {
+	color: #FFFF00;
+}
+/* 橄榄 */
+.olive {
+	color: #808000;
+}
+/* 暗黄褐色/深卡叽布 */
+.darkKhaki {
+	color: #BDB76B;
+}
+/* 柠檬绸 */
+.lemonChiffon {
+	color: #FFFACD;
+}
+/* 灰菊黄/苍麒麟色 */
+.paleGoldenrod {
+	color: #EEE8AA;
+}
+/* 黄褐色/卡叽布 */
+.khaki {
+	color: #F0E68C;
+}
+/* 金色 */
+.gold {
+	color: #FFD700;
+}
+/* 玉米丝色 */
+.cornsilk {
+	color: #FFF8DC;
+}
+/* 金菊黄 */
+.goldenrod {
+	color: #DAA520;
+}
+/* 暗金菊黄 */
+.darkGoldenrod {
+	color: #B8860B;
+}
+/* 花的白色 */
+.floralWhite {
+	color: #FFFAF0;
+}
+/* 老花色/旧蕾丝 */
+.oldLace {
+	color: #FDF5E6;
+}
+/* 浅黄色/小麦色 */
+.wheat {
+	color: #F5DEB3;
+}
+/* 鹿皮色/鹿皮靴 */
+.moccasin {
+	color: #FFE4B5;
+}
+/* 橙色 */
+.orange {
+	color: #FFA500;
+}
+/* 番木色/番木瓜 */
+.papayaWhip {
+	color: #FFEFD5;
+}
+/* 白杏色 */
+.blanchedAlmond {
+	color: #FFEBCD;
+}
+/* 纳瓦白/土著白 */
+.navajoWhite {
+	color: #FFDEAD;
+}
+/* 古董白 */
+.antiqueWhite {
+	color: #FAEBD7;
+}
+/* 茶色 */
+.tan {
+	color: #D2B48C;
+}
+/* 硬木色 */
+.burlyWood {
+	color: #DEB887;
+}
+/* 陶坯黄 */
+.bisque {
+	color: #FFE4C4;
+}
+/* 深橙色 */
+.darkOrange {
+	color: #FF8C00;
+}
+/* 亚麻布 */
+.linen {
+	color: #FAF0E6;
+}
+/* 秘鲁色 */
+.peru {
+	color: #CD853F;
+}
+/* 桃肉色 */
+.peachPuff {
+	color: #FFDAB9;
+}
+/* 沙棕色 */
+.sandyBrown {
+	color: #F4A460;
+}
+/* 巧克力色 */
+.chocolate {
+	color: #D2691E;
+}
+/* 重褐色/马鞍棕色 */
+.saddleBrown {
+	color: #8B4513;
+}
+/* 海贝壳 */
+.seashell {
+	color: #FFF5EE;
+}
+/* 黄土赭色 */
+.sienna {
+	color: #A0522D;
+}
+/* 浅鲑鱼肉色 */
+.lightSalmon {
+	color: #FFA07A;
+}
+/* 珊瑚 */
+.coral {
+	color: #FF7F50;
+}
+/* 橙红色 */
+.orangeRed {
+	color: #FF4500;
+}
+/* 深鲜肉/鲑鱼色 */
+.darkSalmon {
+	color: #E9967A;
+}
+/* 番茄红 */
+.tomato {
+	color: #FF6347;
+}
+/* 浅玫瑰色/薄雾玫瑰 */
+.mistyRose {
+	color: #FFE4E1;
+}
+/* 鲜肉/鲑鱼色 */
+.salmon {
+	color: #FA8072;
+}
+/* 雪白色 */
+.snow {
+	color: #FFFAFA;
+}
+/* 淡珊瑚色 */
+.lightCoral {
+	color: #F08080;
+}
+/* 玫瑰棕色 */
+.rosyBrown {
+	color: #BC8F8F;
+}
+/* 印度红 */
+.indianRed {
+	color: #CD5C5C;
+}
+/* 纯红 */
+.red {
+	color: #FF0000;
+}
+/* 棕色 */
+.brown {
+	color: #A52A2A;
+}
+/* 火砖色/耐火砖 */
+.fireBrick {
+	color: #B22222;
+}
+/* 深红色 */
+.darkRed {
+	color: #8B0000;
+}
+/* 栗色 */
+.maroon {
+	color: #800000;
+}
+/* 纯白 */
+.white {
+	color: #FFFFFF;
+}
+/* 白烟 */
+.whiteSmoke {
+	color: #F5F5F5;
+}
+/* 淡灰色 */
+.gainsboro {
+	color: #DCDCDC;
+}
+/* 浅灰色 */
+.lightGrey {
+	color: #D3D3D3;
+}
+/* 银灰色 */
+.silver {
+	color: #C0C0C0;
+}
+/* 深灰色 */
+.darkGray {
+	color: #A9A9A9;
+}
+/* 灰色 */
+.gray {
+	color: #808080;
+}		
+/* 暗淡灰 */
+.dimGray {
+	color: #696969;
+}
+/* 纯黑 */
+.black {
+	color: #000000;
+}
 
 
 /* = 伪类 Pseudo

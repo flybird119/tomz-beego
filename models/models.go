@@ -22,7 +22,7 @@ type User struct {
 	Name      string    //姓名
 	UserCode  string    //用户编码
 	PassWord  string    //密码
-	BirthDate time.Time `orm:"index"` // 出生日期
+	BirthDate time.Time `orm:"index"` //出生日期
 	Sex       string    //性别
 	QQ        int
 	Mobile    string
@@ -37,13 +37,21 @@ type Article struct {
 	Title       string
 	Content     string `orm:"size(5000)"`
 	Author      int64
-	CommentInd  string
-	ReprintInd  string
+	CommentInd  string //可评论标识
+	ReprintInd  string //可转载标识
+	PrivateInd  string `orm:"null"` //私有标识
 	DefunctInd  string
-	CreatedBy   int64
-	CreatedTime time.Time `orm:"index"`
-	UpdatedBy   int64
-	UpdatedTime time.Time `orm:"index"`
+	CreatedTime time.Time `orm:"auto_now_add"`
+	UpdatedTime time.Time `orm:"auto_now"`
+}
+
+type Comment struct {
+	Id          int64
+	ParentId    int64
+	Content     string
+	DefunctInd  string
+	CreatedBy   int64     `orm:"null"`
+	CreatedTime time.Time `orm:"auto_now_add"`
 }
 
 func RegisterDB() {
